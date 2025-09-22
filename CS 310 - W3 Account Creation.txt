@@ -1,0 +1,19 @@
+# Name:   CS 310 - W3 Account Creation.txt
+# Author: David Marin
+# Created: 9/21/2025
+# Description: Written report for the Account Creation assignment. 
+
+1. How did you invoke the useradd command-line tool?
+    There is a python module called subprocess that I import. I then run a linux command through
+    python like so: subprocess.run(['command', 'arg1', 'arg2']). To create a user account with
+    the audio and video groups, I run this python command:
+    subprocess.run(['sudo', 'useradd', '-m', '-G', 'audio,video', username])
+
+2. How did you create the username value?
+    I created it by using .lower() from the user's full name input. I then did string concatenation
+    with a dash between the first and last name.
+    e.g.
+    name = input
+    name = name.lower()
+    name = name.split()
+    username = str(name[0] + '-' + name[-1])
